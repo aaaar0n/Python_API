@@ -21,3 +21,4 @@ def get_days_before_xmas():
 if __name__ == '__main__':
     days_before_xmas = get_days_before_xmas()
     print(days_before_xmas)
+    print("Happy New Year")
