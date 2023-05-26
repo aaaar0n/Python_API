@@ -19,4 +19,5 @@ def get_days_before_xmas():
 
 
 if __name__ == '__main__':
-    get_days_before_xmas()
+    days_before_xmas = get_days_before_xmas()
+    print(days_before_xmas)
