@@ -23,15 +23,18 @@ def sort_least_10(population_dict): # Returns the list of countries with populat
     sorted_desc = sorted(population_dict.items(), key=lambda x: x[1], reverse = True)
     return sorted_desc
 
+def add_total_population(): # Returns the sum of all population
+    print(sum(country_population.values()))
 
 
 if __name__ == '__main__':
     country_population = get_population(type_name='common')
     #print(country_population)
     sorted_population_asc = sort_top_10(country_population)
-    print(sorted_population_asc)
+    #print(sorted_population_asc)
     sorted_population_desc = sort_least_10(country_population)
-    #print(sorted_population_desc)
+    #print(sorted_population_desc) 
+    add_total_population()
 
 
 
