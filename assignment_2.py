@@ -1,40 +1,76 @@
 import random
 
-class Vehicle:
-    wheels = ''
 
-    def __init__(self):
-        self.wheels = [2, 4, 10]
-        self.brand = ['Toyota', 'BMW', 'Nissan', 'Mercedes-Benz', 'Honda']
-        self.color = ['blue', 'red', 'green', 'black', 'white', 'orange']
-        self.vehicle_type = ['sedan', 'motorcycle', 'truck', 'SUV', 'sports car', 'pickup']
+class Vehicle:
+    """
+    This is a class for vehicle.
+    """
+
+    brand = []
+    color = ['blue', 'red', 'green', 'black', 'white', 'orange']
+    vehicle_type = []
+    wheels = 0
 
     def create_vehicle(self):
-        random_brand = random.choice(self.brand)
+        """
+        Docstring
+        """
+        random_brand = random.choice(self.brand) if self.brand else ''
         random_color = random.choice(self.color)
-        random_type = random.choice(self.vehicle_type)
-        random_vehicle_no_wheels = random_brand + ' ' + random_color + ' ' + random_type
-        return f'{random_vehicle_no_wheels}'
+        random_type = random.choice(self.vehicle_type) if self.vehicle_type else ''
+        created_vehicle = {
+            'brand': random_brand,
+            'color': random_color,
+            'type': random_type,
+            'wheel': self.wheels
+        }
+        return created_vehicle
+
+
+class Car(Vehicle):
+    """
+    Car
+    """
+    brand = ['Toyota', 'BMW', 'Nissan', 'Mercedes-Benz', 'Honda']
+    vehicle_type = ['sedan', 'SUV', 'sports car', 'pickup']
+    wheels = 4
 
 
 class Motorcycle(Vehicle):
-    def show_wheels(self):
-        wheels = '2'
-        return wheels
+    """
+    Motor
+    """
+    brand = ['Russi', 'Mio', 'Click', 'Ducatti']
+    vehicle_type = ['motorcyle']
+    wheels = 2
 
 
 class Truck(Vehicle):
-    def show_wheels(self):
-        wheels = '10'
-        return wheels
+    """
+    Truck
+    """
+    brand = ['Foton', 'Volvo']
+    vehicle_type = ['truck']
+    wheels = [8, 10]
+
+    def create_vehicle(self):
+        """
+        Docstring
+        """
+        random_brand = random.choice(self.brand) if self.brand else ''
+        random_color = random.choice(self.color)
+        random_type = random.choice(self.vehicle_type) if self.vehicle_type else ''
+        random_wheel = random.choice(self.wheels) if self.wheels else 0
+
+        created_vehicle = {
+            'brand': random_brand,
+            'color': random_color,
+            'type': random_type,
+            'wheel': random_wheel
+        }
+        return created_vehicle
 
 
-class car(Vehicle):
-    def show_wheels(self):
-        wheels = '4'
-        return wheels
-
-motorcycle = Motorcycle()
-random_motorcycle = motorcycle.create_vehicle()
-print(f'{random_motorcycle} {motorcycle.show_wheels()}')
-
+if __name__ == '__main__':
+    vehicle = Truck()
+    print(vehicle.create_vehicle())
