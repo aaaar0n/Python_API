@@ -18,43 +18,23 @@ class Vehicle:
 
 
 class Motorcycle(Vehicle):
-    wheels = '2'
-    
+    def show_wheels(self):
+        wheels = '2'
+        return wheels
 
+
+class Truck(Vehicle):
+    def show_wheels(self):
+        wheels = '10'
+        return wheels
+
+
+class car(Vehicle):
+    def show_wheels(self):
+        wheels = '4'
+        return wheels
 
 motorcycle = Motorcycle()
-print(motorcycle.create_vehicle())
-# print(motorcycle.create_vehicle())
+random_motorcycle = motorcycle.create_vehicle()
+print(f'{random_motorcycle} {motorcycle.show_wheels()}')
 
-# motorcycle = Motorcycle()
-# motorcycle.__init__()
-# print(motorcycle.create_vehicle())
-
-    
-
-
-
-
-
-
-
-
-
-
-
-# class Motorcycle(Vehicle)
-#     wheels = 2
-
-
-#         if random_wheels == 2:
-#             random_type = "motorcycle"
-#         elif random_wheels == 10:
-#             random_type = "truck"
-#         else:
-#             random_type = random.choice(vehicle_type)
-#         random_car = f'{random_wheels} - {random_brand} - {random_color} - {random_type}'
-#         return random_car
-
-
-# vehicle = Vehicle()
-# print(vehicle.create_vehicle())
